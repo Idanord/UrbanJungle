@@ -1,23 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
     //declaring variables
-    [HideInInspector]
-    public bool gameStartedFromMainMenu;
+    public InputField name;
 
-    //Array of all Scenes in the project
-    private string[] Scenes = new string[]
+    //this method starts at the main menu and will carry the player pref through the game.
+    void Awake()
     {
-        "FrontEnd", "Credits", "Menu", "UrbenJungleText"
-    };
+        DontDestroyOnLoad(this);
+    }
 
-
-	// Use this for initialization
-	void Start () {
-        
+    // Use this for initialization
+    void Start () {
+        name.text = 
 	}
 	
 	// Update is called once per frame
