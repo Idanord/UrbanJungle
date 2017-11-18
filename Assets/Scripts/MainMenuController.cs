@@ -9,8 +9,12 @@ public class MainMenuController : MonoBehaviour {
     /*//initializing Variables
     public InputField name;*/
 
-	// Use this for initialization
-	void Start () {
+    public InputField nameInput;
+
+    private string userName;
+
+    // Use this for initialization
+    void Start () {
 
         //Adds a listener to the main input field and invokes a method when the value changes
         //name.onValueChanged.AddListener(delegate { ValueChangedCheck(); });
@@ -36,6 +40,15 @@ public class MainMenuController : MonoBehaviour {
     public void Credits()
     {
         SceneManager.LoadScene("Credits");
+    }
+
+    public void OnSubmit()
+    {
+        //set the user name to text in the name input feild
+        userName = nameInput.text;
+
+        //display user name
+        Debug.Log("You entered  " + userName);
     }
 }
 

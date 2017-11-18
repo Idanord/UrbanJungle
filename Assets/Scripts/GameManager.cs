@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
     //declaring variables
-    public InputField name;
+    public InputField nameInput;
+
+    private string userName;
 
     //this method starts at the main menu and will carry the player pref through the game.
     void Awake()
@@ -14,14 +16,13 @@ public class GameManager : MonoBehaviour {
         DontDestroyOnLoad(this);
     }
 
-    // Use this for initialization
-    void Start () {
-        name.text = 
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public void OnSubmit()
+    {
+        //set the user name to text in the name input feild
+        userName = nameInput.text;
+
+        //display user name
+        Debug.Log("You entered  " + userName);
+    }
 
 }

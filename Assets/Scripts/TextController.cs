@@ -9,13 +9,13 @@ public class TextController : MonoBehaviour {
     //publically exposing the gameText varible
     public Text gameText;
     //setting the Enum for states
-    private enum States { road_0, road_1, road_2, road_3, bus, lightrail, shop_0, construction };        //Place new states here in the {} brackets
+    private enum States { guide, rocket1, rocket2, transit };        //Place new states here in the {} brackets
     //States from enum varible
     private States myState;
 
     // Use this for initialization
     void Start() {
-        myState = States.road_0;
+        myState = States.guide;
     }
 
     // Update is called once per frame
@@ -24,8 +24,8 @@ public class TextController : MonoBehaviour {
         print(myState);
 
         //Checking to see what the state is.
-        if (myState == States.road_0) {
-            state_road_0();
+        if (myState == States.guide) {
+            state_guide();
         }
         //moves the player to the Bus state
         else if (myState == States.bus) {
@@ -48,17 +48,19 @@ public class TextController : MonoBehaviour {
         }
     }
 
-    void state_road_0() {
-        gameText.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
-                        "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, " +
-                        "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " +
-                        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. " +
-                        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\n" +
-                        "Press the B key to get on the Bus.";
+    void state_guide() {
+        gameText.text = "Say hello to your friendly guide, Rocket the Fish!" +
+                        "Rocket will guide you to your friends through the urban jungle of Capitol Hill." +
+                        "They’ll offer as many helpful hints as you need, but you’ll have to make some choices along the way!\n\n" +
+                        "Rocket: Hi! I’m Rocket! Nice to meet you name. Did you have a fun time at school today?\n\n" +
+                        "Player: Yes I did! (Press Y for Yes)   Player: No, not today. (Press N for No)";
 
         //Pressing the B key will send the player to the bus text
-        if (Input.GetKeyDown(KeyCode.B)) {
-            myState = States.bus;
+        if (Input.GetKeyDown(KeyCode.Y)) {
+            myState = States.rocket1;
+        } else if (Input.GetKeyDown(KeyCode.N))
+        {
+            myState = States.rocket2;
         }
     }
 
