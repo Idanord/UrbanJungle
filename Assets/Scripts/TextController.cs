@@ -9,7 +9,7 @@ public class TextController : MonoBehaviour {
     //publically exposing the gameText varible
     public Text gameText;
     //setting the Enum for states
-    private enum States { guide, rocket1, rocket2, transit };        //Place new states here in the {} brackets
+    private enum States { comic, guide, rocket1, rocket2, rocket3, rocket4, rocket5, rocket6, rocket7, transit, transit2, transit3, street, street2 };        //Place new states here in the {} brackets
     //States from enum varible
     private States myState;
 
@@ -24,27 +24,58 @@ public class TextController : MonoBehaviour {
         print(myState);
 
         //Checking to see what the state is.
-        if (myState == States.guide) {
+        if (myState == States.guide)
+        {
             state_guide();
         }
         //moves the player to the Bus state
-        else if (myState == States.bus) {
-            state_bus();
-        } else if (myState == States.road_1)
+        else if (myState == States.rocket1)
         {
-            state_road_1();
-        } else if (myState == States.shop_0)
+            state_rocket1();
+        }
+        else if (myState == States.rocket2)
         {
-            state_shop_0();
-        } else if (myState == States.road_2)
+            state_rocket2();
+        }
+        else if (myState == States.transit)
         {
-            state_road_2();
-        } else if (myState == States.road_3)
+            state_transit();
+        }
+        else if (myState == States.transit2)
         {
-            state_road_3();
-        } else if (myState == States.lightrail)
+            state_transit2();
+        }
+        else if (myState == States.transit3)
         {
-            state_lightrail();
+            state_transit3();
+        }
+        else if (myState == States.rocket3)
+        {
+            state_rocket3();
+        }
+        else if (myState == States.rocket4)
+        {
+            state_rocket4();
+        }
+        else if (myState == States.rocket5)
+        {
+            state_rocket5();
+        }
+        else if (myState == States.street)
+        {
+            state_street();
+        }else if(myState== States.comic)
+        {
+            state_comic();
+        }else if(myState == States.street2)
+        {
+            state_street2();
+        }else if(myState == States.rocket6)
+        {
+            state_rocket6();
+        }else if(myState == States.rocket7)
+        {
+            state_rocket7();
         }
     }
 
@@ -64,133 +95,163 @@ public class TextController : MonoBehaviour {
         }
     }
 
-    void state_bus()
+    void state_rocket1()
     {
-        gameText.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
-                        "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, " +
-                        "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " +
-                        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. " +
-                        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\n" +
-                        "Press the O key to get off the bus.";
+        gameText.text = "Rocket: Hurray! I love to have fun at school too.\n\n" +
+                        "Press the Right Arrow key.";
 
         //Pressing the R key Returns the Player to the road
-        if (Input.GetKeyDown(KeyCode.O)) {
-            myState = States.road_1;
+        if (Input.GetKeyDown(KeyCode.RightArrow)) {
+            myState = States.transit;
         }
     }
 
-    void state_road_1()
+    void state_rocket2()
     {
-        gameText.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
-                        "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, " +
-                        "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " +
-                        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. " +
-                        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\n" +
-                        "Press the S key to go into the shop. Or press the W key to continue to walk down the street.";
+        gameText.text = "Rocket: Oh no, I’m sorry to hear that, name. But tomorrow is a brand new day!\n\n" +
+                        "Press the Right Arrow key.";
 
-        //Pressing the S key moves the player into the shop
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            myState = States.shop_0;
-        }
-        //Pressing the W key continues the player down the street.
-        else if (Input.GetKeyDown(KeyCode.W))
-        {
-            myState = States.road_2;
+            myState = States.transit;
         }
     }
 
-    void state_shop_0()
+    void state_transit()
     {
-        gameText.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
-                        "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, " +
-                        "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " +
-                        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. " +
-                        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\n" +
-                        "Press the L key to leave the shop.";
-
-        //Pressing the L key moves the player to the road_2 state.
-        if (Input.GetKeyDown(KeyCode.L))
+        gameText.text = "Rocket: Are you ready to go to the park and meet your friends?" +
+                        "It’s a long way in the big city, but it’ll be super fun. First, let’s get on the streetcar!\n\n" +
+                        "Press the Right Arrow key.";
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            myState = States.road_2;
+            myState = States.transit2;
         }
     }
 
-    void state_road_2()
+    void state_transit2()
     {
-        gameText.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
-                        "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, " +
-                        "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " +
-                        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. " +
-                        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\n" +
-                        "Press the W key to walk up the street. Or press the T key to head to the Lightrail.";
+        gameText.text = "I love the streetcar.\n\n Did you remember to tap your ORCA card?" +
+                        "Player: Yes! (Press Y for Yes)\n\n     Player: Oh no, I forgot. (Press N for No)";
 
-        //Pressing the W key moves the player up the road via walking.
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.Y))
         {
-            myState = States.road_3;
+            myState = States.transit3;
+        }else if (Input.GetKeyDown(KeyCode.N))
+        {
+            myState = States.rocket3;
         }
-        //Pressing the T key moves the player to the lightrail state.
-        else if (Input.GetKeyDown(KeyCode.T))
+    }
+
+    void state_transit3()
+    {
+        gameText.text = "Rocket:  [beep beep!] It’s important to tap your ORCA card whenever you get on any transit." +
+                        "What would you do if you didn’t have enough money to cover the fare?\n\n" +
+                        "Player:  Get on the streetcar anyway. (Press S to get on the streetcar)\n\n" +
+                        "Player: Ask an adult for help to add more money to my ORCA card. (Press H to ask for help)";
+        if (Input.GetKeyDown(KeyCode.H))
         {
-            myState = States.lightrail;
+            myState = States.rocket5;
+        } else if (Input.GetKeyDown(KeyCode.S))
+        {
+            myState = States.rocket4;
+        }
+
+    }
+
+    void state_rocket3()
+    {
+        gameText.text = "Rocket: Not so fast! You’ll want to make sure to let an adult know that you don’t have enough fare to cover the trip.\n\n" +
+                        "Player: Ask an adult for help to add more money to my ORCA card. (Press H to ask for help)";
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            myState = States.rocket5;
         }
     }
 
 
-    //Everything belowe this comment is a work in progress. We need to define what states the player can go into before
-    //moving forward.
-    void state_road_3()
+    void state_rocket4()
     {
-        gameText.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
-                        "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, " +
-                        "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " +
-                        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. " +
-                        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\n" +
-                        "Press the W key to walk up the street. Or press the T key to head to the Lightrail.";
-
-        if (Input.GetKeyDown(KeyCode.W))
+        gameText.text = "That’s okay! Always make sure to tap your ORCA card when getting on any public transit." +
+                        "Fare officers sometimes get on board to check and make sure you’ve paid." +
+                        "You may not see them every time, but you should always tap your card just in case! Look for the yellow pads on columns.\n\n" +
+                        "Press O to get off the streetcar.";
+        if (Input.GetKeyDown(KeyCode.O))
         {
-            myState = States.road_3;
-        }
-        else if (Input.GetKeyDown(KeyCode.T))
-        {
-            myState = States.lightrail;
+            myState = States.street;
         }
     }
 
-    void state_lightrail()
+    void state_rocket5()
     {
-        gameText.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
-                        "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, " +
-                        "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " +
-                        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. " +
-                        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\n" +
-                        "Press the L key to leave the shop.";
-
-        if (Input.GetKeyDown(KeyCode.L))
+        gameText.text = "Rocket: It’s important to ask for help with any purchase like adding more money to your ORCA card.\n\n" +
+                        "Press O to get off the streetcar.";
+        if (Input.GetKeyDown(KeyCode.O))
         {
-            myState = States.road_2;
+            myState = States.street;
+        }
+    }
+    
+    void state_street()
+    {
+        gameText.text = "Rocket: Okay name, do you want to get on the bus now to meet your friends, or go to the comic book store first?\n\n" +
+                        "Player: I love to go to the comic book store!(Press C to go to the Comic book store)\n\n" +
+                        "Player: No thank you, not today.(Press N for No)";
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            myState = States.comic;
+        } else if (Input.GetKeyDown(KeyCode.N))
+        {
+            myState = States.street2;
         }
     }
 
-    void end_game()
+    void state_comic()
     {
-        gameText.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, " +
-                        "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, " +
-                        "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. " +
-                        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. " +
-                        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\n" +
-                        "Press the Q key to leave the game";
-
-        if (Input.GetKeyDown(KeyCode.Q))
+        gameText.text = "Rocket:  Yay! Me too! I want to get a new copy of Fishbowl Quarterly." +
+                        "Press the Right Arrow key to head to the comic shop.";
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            SceneManager.LoadScene("Credits");
+            SceneManager.LoadScene("UrbanJungleTextComic");
+        }
+    }
+
+
+
+    void state_street2()
+    {
+        gameText.text = "No worries. Maybe you would like to go to the candy store instead?\n\n" +
+                        "Player: Yes please! (Press Y for Yes)      Player:  Not today, I don’t have enough allowance. I’m ready to go meet my friends! (Press N for No)";
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            myState = States.rocket6;
+        } else if (Input.GetKeyDown(KeyCode.N))
+        {
+            myState = States.rocket7;
+        }
+    }
+
+    void state_rocket6()
+    {
+        gameText.text = "Rocket: Hurray! Let’s go!\n\n" +
+                        "Press the Right Arrow key to head to the candy store";
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            SceneManager.LoadScene("UrbanJungleTextCandy");
+        }
+    }
+
+    void state_rocket7()
+    {
+        gameText.text = "Rocket: Let’s go!\n\n" +
+                        "Press the Right Arrow key to continue on the street.";
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            SceneManager.LoadScene("UrbanJungleTextNeedle");
         }
     }
 
     
 }
-
+//end of script
 //Will Fisher
-//Last worked on 10/15/2017
+//Last worked on 11/18/2017
