@@ -22,4 +22,10 @@ EditorBuildSettings:
     guid: cd741e7edde76e142ab5259f4286a24b
   - enabled: 1
     path: Assets/_Scenes/UrbanJungleTextComic.unity
+    guid: 0730a97d981624b4791873e960d03fe8
+  - enabled: 1
+    path: Assets/_Scenes/UrbanJungleTextCandy.unity
+    guid: 0332c5cc312aa3d41a17f5a5ddcf7c72
+  - enabled: 1
+    path: Assets/_Scenes/UrbanJungleTextNeedle.unity
     guid: 00000000000000000000000000000000
