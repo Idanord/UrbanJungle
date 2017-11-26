@@ -9,7 +9,8 @@ public class TextController : MonoBehaviour {
     //publically exposing the gameText varible
     public Text gameText;
     //setting the Enum for states
-    private enum States { comic, guide, rocket1, rocket2, rocket3, rocket4, rocket5, rocket6, rocket7, transit, transit2, transit3, street, street2 };        //Place new states here in the {} brackets
+    private enum States { comic, guide, rocket1, rocket2, rocket3, rocket4, rocket5, rocket6, rocket7, transit, transit2, transit3, street, street2,
+        comic1, comic2, comic3, comic4, comic5, tryagain };        //Place new states here in the {} brackets
     //States from enum varible
     private States myState;
 
