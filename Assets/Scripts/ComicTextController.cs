@@ -51,6 +51,7 @@ public class ComicTextController : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.P))
         {
             state_comic2();
+			Debug.Log ("Pressed the P Key");
 
         } else if (Input.GetKeyDown(KeyCode.I))
         {
