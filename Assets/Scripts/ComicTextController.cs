@@ -44,11 +44,11 @@ public class ComicTextController : MonoBehaviour {
         gameText.text = "Rocket: Make sure to look both ways before crossing the street!I love going to Phoenix Comics." +
                         "They’re always so nice to me there.Did you know they do game events nearly every night of the… uh oh!" +
                         "Is that a needle on the ground? What do we do?\n\n"+
-                        "Player: Pick it up. (Press the Up Arrow)\n\n" +
+                        "Player: Pick it up. (Press the P key to pick it up)\n\n" +
                         "Player: Ignore it, go inside the store, and forget about it. (Press I to ignore)\n\n" +
                         "Player: Notice where it is, go inside the store, and tell an adult. (Press the S key to go into the Store)";
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+		if (Input.GetKeyDown(KeyCode.P))
         {
             state_comic2();
 
@@ -99,7 +99,7 @@ public class ComicTextController : MonoBehaviour {
                         "Press the T key to try again";
         if (Input.GetKeyDown(KeyCode.T))
         {
-            state_comic1();
+            state_tryagain();
         }
     }
 
