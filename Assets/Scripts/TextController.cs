@@ -226,7 +226,7 @@ public class TextController : MonoBehaviour {
 
     void state_comic()
     {
-        gameText.text = "Rocket:  Yay! Me too! I want to get a new copy of Fishbowl Quarterly." +
+        gameText.text = "Rocket:  Yay! Me too! I want to get a new copy of Fishbowl Quarterly.\n\n" +
                         "Press the Right Arrow key to head to the comic shop.";
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
