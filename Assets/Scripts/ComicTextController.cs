@@ -9,7 +9,7 @@ public class ComicTextController : MonoBehaviour {
     //publically exposing the gameText varible
     public Text gameText;
     //setting the Enum for states
-    private enum States { comic1, comic2, comic3, comic4, comic5, tryagain };        //Place new states here in the {} brackets
+    private enum States { comic1, comic2, comic3, comic4, comic5, tryagain, tryagain2 };        //Place new states here in the {} brackets
     //States from enum varible
     private States myState;
 
@@ -40,6 +40,14 @@ public class ComicTextController : MonoBehaviour {
         {
             state_comic4();
         }
+        else if(myState == States.tryagain)
+        {
+            state_tryagain();
+        }
+        else if(myState == States.tryagain2)
+        {
+            state_tryagain2();
+        }
     }
 
     void state_comic1()
@@ -53,15 +61,15 @@ public class ComicTextController : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            myState = state_comic2();
+            myState = States.comic2;
 
 		} else if (Input.GetKeyDown(KeyCode.I))
         {
-			myState = state_comic3();
+			myState = States.comic3;
 
 		} else if (Input.GetKeyDown(KeyCode.S))
         {
-            myState = state_comic4();
+            myState = States.comic4;
 
         }
 
@@ -74,7 +82,7 @@ public class ComicTextController : MonoBehaviour {
                         "Press the T Key to try again";
 		if (Input.GetKeyDown(KeyCode.T))
         {
-			myState = state_tryagain();
+			myState = States.tryagain;
         }
     }
 
@@ -85,13 +93,14 @@ public class ComicTextController : MonoBehaviour {
                         "Is that a needle on the ground? What do we do?\n\n" +
                         "Player: Ignore it, go inside the store, and forget about it. (Press I to ignore)\n\n" +
                         "Player: Notice where it is, go inside the store, and tell an adult. (Press the S key to go into the Store)";
-		if (Input.GetKeyDown(KeyCode.I))
+
+        if (Input.GetKeyDown(KeyCode.I))
         {
-            state_comic3();
+            myState = States.comic3;
         }
 		else if (Input.GetKeyDown(KeyCode.S))
         {
-			myState = state_comic4();
+			myState = States.comic4;
         }
     }
 
@@ -103,7 +112,19 @@ public class ComicTextController : MonoBehaviour {
                         "Press the T key to try again";
 		if (Input.GetKeyDown(KeyCode.T))
         {
-			myState = state_tryagain();
+			myState = States.tryagain2;
+        }
+    }
+
+    void state_tryagain2()
+    {
+        gameText.text = "Rocket: Make sure to look both ways before crossing the street!I love going to Phoenix Comics." +
+                        "They’re always so nice to me there.Did you know they do game events nearly every night of the… uh oh!" +
+                        "Is that a needle on the ground? What do we do?\n\n" +
+                        "Player: Notice where it is, go inside the store, and tell an adult. (Press the S key to go into the Store)";
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            myState = States.comic4;
         }
     }
 
