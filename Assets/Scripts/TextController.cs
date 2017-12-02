@@ -130,8 +130,8 @@ public class TextController : MonoBehaviour {
 
     void state_transit2()
     {
-        gameText.text = "I love the streetcar.\n\n Did you remember to tap your ORCA card?" +
-                        "Player: Yes! (Press Y for Yes)\n\n     Player: Oh no, I forgot. (Press N for No)";
+        gameText.text = "I love the streetcar.\n\n Did you remember to tap your ORCA card?\n\n" +
+                        "Player: Yes! (Press Y for Yes)  Player: Oh no, I forgot. (Press N for No)";
 
         if (Input.GetKeyDown(KeyCode.Y))
         {
@@ -219,7 +219,9 @@ public class TextController : MonoBehaviour {
     void state_street2()
     {
         gameText.text = "No worries. Maybe you would like to go to the candy store instead?\n\n" +
-                        "Player: Yes please! (Press Y for Yes)      Player:  Not today, I don’t have enough allowance. I’m ready to go meet my friends! (Press N for No)";
+                        "Player: Yes please! (Press Y for Yes)\n" +
+                        "Player:  Not today, I don’t have enough allowance.\n" +
+                        "I’m ready to go meet my friends! (Press N for No)";
         if (Input.GetKeyDown(KeyCode.Y))
         {
             myState = States.rocket6;

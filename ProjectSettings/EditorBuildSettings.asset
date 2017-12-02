@@ -28,4 +28,7 @@ EditorBuildSettings:
     guid: 0332c5cc312aa3d41a17f5a5ddcf7c72
   - enabled: 1
     path: Assets/_Scenes/UrbanJungleTextNeedle.unity
+    guid: cb42387b4c3112c488050dc280dda516
+  - enabled: 1
+    path: Assets/_Scenes/UrbanJungleStreet.unity
     guid: 00000000000000000000000000000000
