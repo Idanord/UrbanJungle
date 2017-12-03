@@ -31,4 +31,10 @@ EditorBuildSettings:
     guid: cb42387b4c3112c488050dc280dda516
   - enabled: 1
     path: Assets/_Scenes/UrbanJungleStreet.unity
+    guid: 4472cae517b594b4ea145b2fef9b265e
+  - enabled: 1
+    path: Assets/_Scenes/UrbanJungleBus.unity
+    guid: 968477dcb6a6e7e4b91d8d06c3e75f04
+  - enabled: 1
+    path: Assets/_Scenes/UrbanJungleEndGame.unity
     guid: 00000000000000000000000000000000
