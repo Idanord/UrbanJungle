@@ -9,7 +9,7 @@ public class ComicTextController : MonoBehaviour {
     //publically exposing the gameText varible
     public Text gameText;
     //setting the Enum for states
-    private enum States { comic1, comic2, comic3, comic4, comic5, tryagain, tryagain2 };        //Place new states here in the {} brackets
+    private enum States { comic1, comic2, comic3, comic4, comic5, tryagain, tryagain2, leavingComic, leavingComic2, homeless1, tryAgain3, tryAgain4, talkToHomeless };        //Place new states here in the {} brackets
     //States from enum varible
     private States myState;
 
@@ -47,6 +47,30 @@ public class ComicTextController : MonoBehaviour {
         else if(myState == States.tryagain2)
         {
             state_tryagain2();
+        }
+        else if(myState == States.leavingComic)
+        {
+            state_leavingComic();
+        }
+        else if(myState == States.leavingComic2)
+        {
+            state_leavingComic2();
+        }
+        else if(myState == States.homeless1)
+        {
+            state_homeless1();
+        }
+        else if (myState == States.tryAgain3)
+        {
+            state_tryAgain3();
+        }
+        else if (myState == States.tryAgain4)
+        {
+            state_tryAgain4();
+        }
+        else if(myState == States.talkToHomeless)
+        {
+            state_talkToHomeless();
         }
     }
 
@@ -135,10 +159,84 @@ public class ComicTextController : MonoBehaviour {
                         "Press the Right Arrow key to advance";
 		if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            SceneManager.LoadScene("UrbanJungleStreet");
+            myState = States.leavingComic;
         }
     }
 
+    void state_leavingComic()
+    {
+        gameText.text = "Rocket: I liked that special edition of Fishbowl Quarterly, but it wasn’t something I absolutely needed." +
+                        "I like browsing in the store and talking to the people who work there, because they know a lot about one of my favorite things: comics!\n\n" +
+                        "Press the Right Arrow key to advance";
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            myState = States.leavingComic2;
+        }
+    }
+
+    void state_leavingComic2()
+    {
+        gameText.text = "You pass a homeless person on the street with a sign that says “Homeless. Please help. Thank you. God bless.”\n\n" +
+                        "Press the Right Arrow key to advance";
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            myState = States.homeless1;
+        }
+    }
+
+    void state_homeless1()
+    {
+        gameText.text = "Rocket: Hello there.\n\n" +
+                        "Do you ignore the homeless person entirely and keep walking?\n (Press the I key)\n\n" +
+                        "Do you smile and nod along with Rocket but keep walking?\n (Press the K key)\n\n" +
+                        "Do you take a moment to remember if you have any spare change and ask Rocket to spare some change as well?\n (Press the C key)";
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            myState = States.tryAgain3;
+        } else if (Input.GetKeyDown(KeyCode.K))
+        {
+            myState = States.tryAgain4;
+        }else if (Input.GetKeyDown(KeyCode.C))
+        {
+            myState = States.talkToHomeless;
+        }
+    }
+
+    void state_tryAgain3()
+    {
+        gameText.text = "Rocket: Hello there.\n\n" +
+                        "Do you smile and nod along with Rocket but keep walking?\n (Press the K key)\n\n" +
+                        "Do you take a moment to remember if you have any spare change and ask Rocket to spare some change as well?\n (Press the C key)";
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            myState = States.tryAgain4;
+        } else if (Input.GetKeyDown(KeyCode.C))
+        {
+            myState = States.talkToHomeless;
+        }
+    }
+
+    void state_tryAgain4()
+    {
+        gameText.text = "Rocket: Hello there.\n\n" +
+                        "Do you take a moment to remember if you have any spare change and ask Rocket to spare some change as well?\n (Press the C key)";
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            myState = States.talkToHomeless;
+        }
+    }
+
+    void state_talkToHomeless()
+    {
+        gameText.text = "Rocket: I would love to help. Here, I have a few quarters, as do you." +
+                        "That’s $2. Rocket hands the money to the person. The person says thank you!" +
+                        "Thanks for helping that person. It’s always good to offer kindness to strangers when and how you can.\n\n" +
+                        "Press the Right Arrow key to advance";
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            SceneManager.LoadScene("UrbanJungleStreet");
+        }
+    }
 }
 
 //end of script
