@@ -9,13 +9,14 @@ public class MainMenuController : MonoBehaviour {
     /*//initializing Variables
     public InputField name;*/
 
-    public InputField nameInput;
+    
 
-    private string userName;
+    private string userName, PlayerName;
 
     // Use this for initialization
     void Start () {
 
+        
         //Adds a listener to the main input field and invokes a method when the value changes
         //name.onValueChanged.AddListener(delegate { ValueChangedCheck(); });
 
@@ -32,8 +33,18 @@ public class MainMenuController : MonoBehaviour {
         Debug.Log("Value Changed");
     }*/
 
+    public void SaveUserName(string newName)
+    {
+        userName = newName;
+    }
+
     public void StartGame()
     {
+        //PlayerName = nameInput.text;
+        //PlayerPrefs.SetString("NAME", PlayerName);
+        //Debug.Log("PlayerName variable now holds: " + PlayerName + " PlayerPrefs now is " + PlayerPrefs.GetString("NAME"));
+        //SetPlayerName(PlayerName);
+        //Debug.Log("In Menu controller and passing this name to SPN: " + PlayerName);
         SceneManager.LoadScene("UrbenJungleText");
     }
 
@@ -42,14 +53,14 @@ public class MainMenuController : MonoBehaviour {
         SceneManager.LoadScene("Credits");
     }
 
-    public void OnSubmit()
+    /*public void nameCarry()
     {
         //set the user name to text in the name input feild
         userName = nameInput.text;
-
+        //userName = nameInput.GetComponent<InputField>().text;
         //display user name
-        Debug.Log("You entered  " + userName);
-    }
+        Debug.Log("You entered " + userName);
+    }*/
 }
 
 //Will Fisher

@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class TextController : MonoBehaviour {
+    //public new Text name = UIController.playerName;
 
     //publically exposing the gameText varible
     public Text gameText;
@@ -12,6 +13,8 @@ public class TextController : MonoBehaviour {
     private enum States { comic, guide, rocket1, rocket2, rocket3, rocket4, rocket5, rocket6, rocket7, transit, transit2, transit3, street, street2};        //Place new states here in the {} brackets
     //States from enum varible
     private States myState;
+    //private readonly string playerName; //link userName
+    //public string playerName;
 
     // Use this for initialization
     void Start() {
@@ -83,7 +86,7 @@ public class TextController : MonoBehaviour {
         gameText.text = "Say hello to your friendly guide, Rocket the Fish!" +
                         "Rocket will guide you to your friends through the urban jungle of Capitol Hill." +
                         "They’ll offer as many helpful hints as you need, but you’ll have to make some choices along the way!\n\n" +
-                        "Rocket: Hi! I’m Rocket! Nice to meet you name. Did you have a fun time at school today?\n\n" +
+                        "Rocket: Hi! I’m Rocket! Nice to meet you"+ PlayerPrefs.GetString("NAME") + ". Did you have a fun time at school today?\n\n" +
                         "Player: Yes I did! (Press Y for Yes)   Player: No, not today. (Press N for No)";
 
         //Pressing the B key will send the player to the bus text
@@ -130,7 +133,7 @@ public class TextController : MonoBehaviour {
 
     void state_transit2()
     {
-        gameText.text = "I love the streetcar.\n\n Did you remember to tap your ORCA card?" +
+        gameText.text = "I love the streetcar.\n\n Did you remember to tap your ORCA card?\n\n" +
                         "Player: Yes! (Press Y for Yes)\n\n     Player: Oh no, I forgot. (Press N for No)";
 
         if (Input.GetKeyDown(KeyCode.Y))
