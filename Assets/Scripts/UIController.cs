@@ -5,34 +5,45 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour {
+    /*
+    pupublic InputField nameInt;
+    public static string playerName;
 
-    public InputField nameInput;
-
-    private string playerName;
-
-    public void OnSubmit()
+    void OnSubmit()
     {
-        playerName = nameInput.text;
-
-        Debug.Log("You selected " + nameInput);
+        nameInput.text = playerName;
+        Debug.Log("You selected " + playerName);
     }
-    
+    */
     /*
     public static InputField nameInput;
 
-    public static string SetPlayerName(string value) {
+    public void SetPlayerName(string value) {
         //playerName.text = value;
         string PlayerName = value;
 
-        string otherName = nameInput.text;
+ 
         //PlayerPrefs.SetString(PlayerName,value);
         PlayerPrefs.SetString("NAME", PlayerName);
-        PlayerPrefs.SetString("OTHERNAME", otherName);
+//PlayerPrefs.SetString("OTHERNAME", otherName);
         string name = PlayerPrefs.GetString("NAME");
-        string oName = PlayerPrefs.GetString("OTHERNAME");
-        Debug.Log("PlayerName variable now holds: " + name + " " + oName);
-        return PlayerName;
+        //string oName = PlayerPrefs.GetString("OTHERNAME");
+        Debug.Log("PlayerName variable now holds: " + name );
+        
     }
 */
+    //rename inputfield for clarification
+    public InputField namePlayer;
+    public static string m_PlayerName;
+    //Added Start on value change to Name Input
+    public void Start()
+    {        
+        m_PlayerName = namePlayer.text;
+    }
+    //Added Update to on end edit on Name Input
+    public void Update()
+    {
+        PlayerPrefs.SetString("Name", m_PlayerName);
+    }
 
 }

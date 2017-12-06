@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class TextController : MonoBehaviour {
     //public new Text name = UIController.playerName;
+    
 
+    
     //publically exposing the gameText varible
     public Text gameText;
     //setting the Enum for states
@@ -18,7 +20,9 @@ public class TextController : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
+
         myState = States.guide;
+        
     }
 
     // Update is called once per frame
@@ -86,7 +90,7 @@ public class TextController : MonoBehaviour {
         gameText.text = "Say hello to your friendly guide, Rocket the Fish!" +
                         "Rocket will guide you to your friends through the urban jungle of Capitol Hill." +
                         "They’ll offer as many helpful hints as you need, but you’ll have to make some choices along the way!\n\n" +
-                        "Rocket: Hi! I’m Rocket! Nice to meet you"+ PlayerPrefs.GetString("NAME") + ". Did you have a fun time at school today?\n\n" +
+                        "Rocket: Hi! I’m Rocket! Nice to meet you " + PlayerPrefs.GetString("Name") + ". Did you have a fun time at school today?\n\n" +
                         "Player: Yes I did! (Press Y for Yes)   Player: No, not today. (Press N for No)";
 
         //Pressing the B key will send the player to the bus text
@@ -134,7 +138,11 @@ public class TextController : MonoBehaviour {
     void state_transit2()
     {
         gameText.text = "I love the streetcar.\n\n Did you remember to tap your ORCA card?\n\n" +
-                        "Player: Yes! (Press Y for Yes)\n\n     Player: Oh no, I forgot. (Press N for No)";
+
+                        "Player: Yes! (Press Y for Yes)\n\n     Player: Oh no, I forgot. (Press N for No)" +
+
+                        "Player: Yes! (Press Y for Yes)  Player: Oh no, I forgot. (Press N for No)";
+
 
         if (Input.GetKeyDown(KeyCode.Y))
         {
@@ -222,7 +230,9 @@ public class TextController : MonoBehaviour {
     void state_street2()
     {
         gameText.text = "No worries. Maybe you would like to go to the candy store instead?\n\n" +
-                        "Player: Yes please! (Press Y for Yes)      Player:  Not today, I don’t have enough allowance. I’m ready to go meet my friends! (Press N for No)";
+                        "Player: Yes please! (Press Y for Yes)\n" +
+                        "Player:  Not today, I don’t have enough allowance.\n" +
+                        "I’m ready to go meet my friends! (Press N for No)";
         if (Input.GetKeyDown(KeyCode.Y))
         {
             myState = States.rocket6;

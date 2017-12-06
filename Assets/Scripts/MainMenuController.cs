@@ -32,12 +32,12 @@ public class MainMenuController : MonoBehaviour {
     {
         Debug.Log("Value Changed");
     }*/
-
+    /*
     public void SaveUserName(string newName)
     {
         userName = newName;
     }
-
+    */
     public void StartGame()
     {
         //PlayerName = nameInput.text;
