@@ -73,9 +73,9 @@ public class NeedleTextController : MonoBehaviour {
     void state_needle1()
     {
         gameText.text = "Rocket: We can only take the 49 bus to get to the park, but...uh oh! Is that a needle on the ground? What do we do?\n\n" +
-                        "Player: Pick it up. (Press the Up Arrow key)\n\n" +
-                        "Player: Ignore it and wait for the bus. (Press the I key)\n\n" +
-                        "Player: Notice where it is, go inside a nearby store, and tell an adult. (Press the S key)";
+                        "" + PlayerPrefs.GetString("Name") + ": Pick it up. (Press the Up Arrow key)\n\n" +
+                        "" + PlayerPrefs.GetString("Name") + ": Ignore it and wait for the bus. (Press the I key)\n\n" +
+                        "" + PlayerPrefs.GetString("Name") + ": Notice where it is, go inside a nearby store, and tell an adult. (Press the S key)";
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             myState = States.needle2;
@@ -102,8 +102,8 @@ public class NeedleTextController : MonoBehaviour {
     void state_tryAgain()
     {
         gameText.text = "Rocket: We can only take the 49 bus to get to the park, but...uh oh! Is that a needle on the ground? What do we do?\n\n" +
-                        "Player: Ignore it and wait for the bus. (Press the I key)\n\n" +
-                        "Player: Notice where it is, go inside a nearby store, and tell an adult. (Press the S key)";
+                        "" + PlayerPrefs.GetString("Name") + ": Ignore it and wait for the bus. (Press the I key)\n\n" +
+                        "" + PlayerPrefs.GetString("Name") + ": Notice where it is, go inside a nearby store, and tell an adult. (Press the S key)";
         if (Input.GetKeyDown(KeyCode.I))
         {
             myState = States.needle3;
@@ -129,7 +129,7 @@ public class NeedleTextController : MonoBehaviour {
     void state_tryAgain2()
     {
         gameText.text = "Rocket: We can only take the 49 bus to get to the park, but...uh oh! Is that a needle on the ground? What do we do?\n\n" +
-                        "Player: Notice where it is, go inside a nearby store, and tell an adult. (Press the S key)";
+                        "" + PlayerPrefs.GetString("Name") + ": Notice where it is, go inside a nearby store, and tell an adult. (Press the S key)";
         if (Input.GetKeyDown(KeyCode.S))
         {
             myState = States.needle4;

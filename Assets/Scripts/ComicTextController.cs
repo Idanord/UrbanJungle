@@ -79,9 +79,9 @@ public class ComicTextController : MonoBehaviour {
         gameText.text = "Rocket: Make sure to look both ways before crossing the street!I love going to Phoenix Comics." +
                         "They’re always so nice to me there.Did you know they do game events nearly every night of the… uh oh!" +
                         "Is that a needle on the ground? What do we do?\n\n"+
-                        "Player: Pick it up. (Press the Up Arrow to pick it up)\n\n" +
-                        "Player: Ignore it, go inside the store, and forget about it. (Press I to ignore)\n\n" +
-                        "Player: Notice where it is, go inside the store, and tell an adult. (Press the S key to go into the Store)";
+                        "" + PlayerPrefs.GetString("Name") + ": Pick it up. (Press the Up Arrow to pick it up)\n\n" +
+                        "" + PlayerPrefs.GetString("Name") + ": Ignore it, go inside the store, and forget about it. (Press I to ignore)\n\n" +
+                        "" + PlayerPrefs.GetString("Name") + ": Notice where it is, go inside the store, and tell an adult. (Press the S key to go into the Store)";
 
 		if (Input.GetKeyDown(KeyCode.UpArrow))
         {
@@ -115,8 +115,8 @@ public class ComicTextController : MonoBehaviour {
         gameText.text = "Rocket: Make sure to look both ways before crossing the street!I love going to Phoenix Comics." +
                         "They’re always so nice to me there.Did you know they do game events nearly every night of the… uh oh!" +
                         "Is that a needle on the ground? What do we do?\n\n" +
-                        "Player: Ignore it, go inside the store, and forget about it. (Press I to ignore)\n\n" +
-                        "Player: Notice where it is, go inside the store, and tell an adult. (Press the S key to go into the Store)";
+                        "" + PlayerPrefs.GetString("Name") + ": Ignore it, go inside the store, and forget about it. (Press I to ignore)\n\n" +
+                        "" + PlayerPrefs.GetString("Name") + ": Notice where it is, go inside the store, and tell an adult. (Press the S key to go into the Store)";
 
         if (Input.GetKeyDown(KeyCode.I))
         {
@@ -145,7 +145,7 @@ public class ComicTextController : MonoBehaviour {
         gameText.text = "Rocket: Make sure to look both ways before crossing the street!I love going to Phoenix Comics." +
                         "They’re always so nice to me there.Did you know they do game events nearly every night of the… uh oh!" +
                         "Is that a needle on the ground? What do we do?\n\n" +
-                        "Player: Notice where it is, go inside the store, and tell an adult. (Press the S key to go into the Store)";
+                        "" + PlayerPrefs.GetString("Name") + ": Notice where it is, go inside the store, and tell an adult. (Press the S key to go into the Store)";
         if (Input.GetKeyDown(KeyCode.S))
         {
             myState = States.comic4;

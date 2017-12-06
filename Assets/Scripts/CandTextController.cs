@@ -73,9 +73,9 @@ public class CandTextController : MonoBehaviour {
     void state_candy1()
     {
         gameText.text = "Rocket: I love RocketFizz! They have all , but...uh oh! Is that a needle on the ground? What do we do?\n\n" +
-                        "Player: Pick it up. (Press the Up Arrow)\n\n" +
-                        "Player: Ignore it, go to the store, and forget about it. (Press the I key)\n\n" +
-                        "Player: Notice where it is, go inside a nearby store, and tell an adult. (Press the S key)";
+                        "" + PlayerPrefs.GetString("Name") + ": Pick it up. (Press the Up Arrow)\n\n" +
+                        "" + PlayerPrefs.GetString("Name") + ": Ignore it, go to the store, and forget about it. (Press the I key)\n\n" +
+                        "" + PlayerPrefs.GetString("Name") + ": Notice where it is, go inside a nearby store, and tell an adult. (Press the S key)";
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             myState = States.candy2;
@@ -102,8 +102,8 @@ public class CandTextController : MonoBehaviour {
     void state_tryAgain()
     {
         gameText.text = "Rocket: I love RocketFizz! They have all , but...uh oh! Is that a needle on the ground? What do we do?\n\n" +
-                        "Player: Ignore it, go to the store, and forget about it. (Press the I key)\n\n" +
-                        "Player: Notice where it is, go inside a nearby store, and tell an adult. (Press the S key)";
+                        "" + PlayerPrefs.GetString("Name") + ": Ignore it, go to the store, and forget about it. (Press the I key)\n\n" +
+                        "" + PlayerPrefs.GetString("Name") + ": Notice where it is, go inside a nearby store, and tell an adult. (Press the S key)";
         if (Input.GetKeyDown(KeyCode.I))
         {
             myState = States.candy3;
@@ -127,7 +127,7 @@ public class CandTextController : MonoBehaviour {
     void state_tryAgain2()
     {
         gameText.text = "Rocket: I love RocketFizz! They have all , but...uh oh! Is that a needle on the ground? What do we do?\n\n" +
-                        "Player: Notice where it is, go inside a nearby store, and tell an adult. (Press the S key)";
+                        "" + PlayerPrefs.GetString("Name") + ": Notice where it is, go inside a nearby store, and tell an adult. (Press the S key)";
         if (Input.GetKeyDown(KeyCode.S))
         {
             myState = States.candy4;

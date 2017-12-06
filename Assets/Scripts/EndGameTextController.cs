@@ -49,9 +49,9 @@ public class EndGameTextController : MonoBehaviour {
     void state_endGame()
     {
         gameText.text = "Rocket: I love the 49 bus! I can’t wait to get to the park to meet your friends! What kind of games will we play once we get there?\n\n" +
-                        "Player: I want to play Tag with my friends! (Press the T key)" +
-                        "Player: I want to play Hop-schotch with my firends! (Press the H key)" +
-                        "Player: I'm not sure. I'll see what Everyone wants to play when we get there. (Press the E key)";
+                        "" + PlayerPrefs.GetString("Name") + ": I want to play Tag with my friends! (Press the T key)" +
+                        "" + PlayerPrefs.GetString("Name") + ": I want to play Hop-schotch with my firends! (Press the H key)" +
+                        "" + PlayerPrefs.GetString("Name") + ": I'm not sure. I'll see what Everyone wants to play when we get there. (Press the E key)";
         if (Input.GetKeyDown(KeyCode.T))
         {
             myState = State.tag;
@@ -67,8 +67,8 @@ public class EndGameTextController : MonoBehaviour {
     void state_tag()
     {
         gameText.text = "Rocket: That sounds great. I like tag. Do you think everyone else will want to play?\n\n" +
-                        "Player: I think they will. (Press the Y key)" +
-                        "Player: I don't think everyone will play tag. (Press the N key)";
+                        "" + PlayerPrefs.GetString("Name") + ": I think they will. (Press the Y key)" +
+                        "" + PlayerPrefs.GetString("Name") + ": I don't think everyone will play tag. (Press the N key)";
         if (Input.GetKeyDown(KeyCode.Y))
         {
             myState = State.finalAnswer;
@@ -81,8 +81,8 @@ public class EndGameTextController : MonoBehaviour {
     void state_hop()
     {
         gameText.text = "Rocket: I like to play hop-schotch. Do you think everyone else will want to play?\n\n" +
-                        "Player: I think they will. (Press the Y key)" +
-                        "Player: I don't think everyone will play hop-scotch. (Press the N key)";
+                        "" + PlayerPrefs.GetString("Name") + ": I think they will. (Press the Y key)" +
+                        "" + PlayerPrefs.GetString("Name") + ": I don't think everyone will play hop-scotch. (Press the N key)";
         if (Input.GetKeyDown(KeyCode.Y))
         {
             myState = State.finalAnswer;

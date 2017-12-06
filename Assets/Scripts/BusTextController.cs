@@ -43,9 +43,9 @@ public class BusTextController : MonoBehaviour {
         gameText.text = "Rocket: We made it to the 49! There are lots of people standing here at this bus stop, I bet they’re all waiting for the bus too." +
                         "It doesn’t look like there’s a line. Do you know what to do when the bus gets here? Oh, look! The 49!" +
                         "It’s waiting at the red light and will be here soon!\n\n" +
-                        "Player: As the bus arrives, I should Push forward through the crowd of people so I can be the first one on the bus," +
+                        "" + PlayerPrefs.GetString("Name") + ": As the bus arrives, I should Push forward through the crowd of people so I can be the first one on the bus," +
                         "even if people are trying to get off. (Press the P key)\n\n" +
-                        "Player: As the bus arrives, I should Wait where I am standing and move safely to the bus," +
+                        "" + PlayerPrefs.GetString("Name") + ": As the bus arrives, I should Wait where I am standing and move safely to the bus," +
                         "only when everyone on the bus has gotten off first. (Press the W key)";
         if (Input.GetKeyDown(KeyCode.P))
         {
@@ -73,7 +73,7 @@ public class BusTextController : MonoBehaviour {
         gameText.text = "Rocket: We made it to the 49! There are lots of people standing here at this bus stop, I bet they’re all waiting for the bus too." +
                         "It doesn’t look like there’s a line. Do you know what to do when the bus gets here? Oh, look! The 49!" +
                         "It’s waiting at the red light and will be here soon!\n\n" +
-                        "Player: As the bus arrives, I should Wait where I am standing and move safely to the bus," +
+                        "" + PlayerPrefs.GetString("Name") + ": As the bus arrives, I should Wait where I am standing and move safely to the bus," +
                         "only when everyone on the bus has gotten off first. (Press the W key)";
         if (Input.GetKeyDown(KeyCode.W))
         {
