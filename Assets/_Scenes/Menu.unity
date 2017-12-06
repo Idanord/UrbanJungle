@@ -42,7 +42,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 9
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -54,7 +54,7 @@ LightmapSettings:
     m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
-    serializedVersion: 9
+    serializedVersion: 8
     m_Resolution: 2
     m_BakeResolution: 40
     m_TextureWidth: 1024
@@ -87,7 +87,7 @@ LightmapSettings:
     m_PVRFilteringAtrousNormalSigma: 1
     m_PVRFilteringAtrousPositionSigma: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_ShadowMaskMode: 2
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2415,8 +2415,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0abfcae27298b9b45bc7f66324737953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameInput: {fileID: 1646510511}
-  nameInput: {fileID: 1646510511}
 --- !u!224 &1511881518
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2723,8 +2721,8 @@ Canvas:
   m_GameObject: {fileID: 1680664391}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 379839602}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -3009,6 +3007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 919b3b27831b33c408a9acd452d3c68d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameInput: {fileID: 0}
 --- !u!4 &1826010728
 Transform:
   m_ObjectHideFlags: 0
