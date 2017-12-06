@@ -116,7 +116,7 @@ public class NeedleTextController : MonoBehaviour {
     void state_needle3()
     {
         gameText.text = "Rocket: Although they seem like trash because they’re abandoned on the ground," +
-                        "sharp needles (sharps) are hazardous, especially where there are lots of people walking around." +
+                        "sharp needles (sharps) can be dangerous, especially where there are lots of people walking around." +
                         "Maybe we should tell an adult?\n\n" +
                         "Press the T key to try again";
 
@@ -139,7 +139,7 @@ public class NeedleTextController : MonoBehaviour {
     void state_needle4()
     {
         gameText.text = "Rocket:  They were so grateful we let them know about the sharp needles (sharps) out in front." +
-                        "Now they can carefully clean them up or let the city authorities know. Good work!\n\n" +
+                        "They will know how to safely clean it up. Good work!\n\n" +
                         "Press the Right Arrow key to advance";
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
