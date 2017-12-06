@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class TextController : MonoBehaviour {
     //public new Text name = UIController." + PlayerPrefs.GetString("Name") + "Name;
-    
+    //string m_PlayerName;
 
-    
+
     //publically exposing the gameText varible
     public Text gameText;
     //setting the Enum for states
@@ -22,9 +22,13 @@ public class TextController : MonoBehaviour {
     void Start() {
 
         myState = States.guide;
-        
+        //SetText();
     }
-
+    /*void SetText()
+    {
+        //Fetch name (string) from the PlayerPrefs (set these Playerprefs in another script). If no string exists, the default is "No Name"
+        m_PlayerName = PlayerPrefs.GetString("Name", "No Name");
+    }*/
     // Update is called once per frame
     void Update() {
         //Print out what state the player is in to the console
