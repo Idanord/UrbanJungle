@@ -95,7 +95,7 @@ public class TextController : MonoBehaviour {
                         "Rocket will guide you to your friends through the urban jungle of Capitol Hill." +
                         "They’ll offer as many helpful hints as you need, but you’ll have to make some choices along the way!\n\n" +
                         "Rocket: Hi! I’m Rocket! Nice to meet you " + PlayerPrefs.GetString("Name") + ". Did you have a fun time at school today?\n\n" +
-                        "" + PlayerPrefs.GetString("Name") + ": Yes I did! (Press Y for Yes)   " + PlayerPrefs.GetString("Name") + ": No, not today. (Press N for No)";
+                        "" + PlayerPrefs.GetString("Name") + ": Yes I did!  (Press Y for Yes)   " + PlayerPrefs.GetString("Name") + ": No, not today.  (Press N for No)";
 
         //Pressing the B key will send the player to the bus text
         if (Input.GetKeyDown(KeyCode.Y)) {
@@ -143,7 +143,7 @@ public class TextController : MonoBehaviour {
     {
         gameText.text = "I love the streetcar.\n\n Did you remember to tap your ORCA card?\n\n" +
 
-                        "" + PlayerPrefs.GetString("Name") + ": Yes! (Press Y for Yes)\n\n     " + PlayerPrefs.GetString("Name") + ": Oh no, I forgot. (Press N for No)";
+                        "" + PlayerPrefs.GetString("Name") + ": Yes!  (Press Y for Yes)\n\n     " + PlayerPrefs.GetString("Name") + ": Oh no, I forgot.  (Press N for No)";
 
                         //"" + PlayerPrefs.GetString("Name") + ": Yes! (Press Y for Yes)  " + PlayerPrefs.GetString("Name") + ": Oh no, I forgot. (Press N for No)";
 
@@ -161,8 +161,8 @@ public class TextController : MonoBehaviour {
     {
         gameText.text = "Rocket:  [beep beep!] It’s important to tap your ORCA card whenever you get on any transit." +
                         "What would you do if you didn’t have enough money to cover the fare?\n\n" +
-                        "" + PlayerPrefs.GetString("Name") + ":  Get on the streetcar anyway. (Press S to get on the streetcar)\n\n" +
-                        "" + PlayerPrefs.GetString("Name") + ": Ask an adult for help to add more money to my ORCA card. (Press H to ask for help)";
+                        "" + PlayerPrefs.GetString("Name") + ":  Get on the streetcar anyway.\n (Press S to get on the streetcar)\n\n" +
+                        "" + PlayerPrefs.GetString("Name") + ": Ask an adult for help to add more money to my ORCA card.\n (Press H to ask for help)";
         if (Input.GetKeyDown(KeyCode.H))
         {
             myState = States.rocket5;
@@ -176,7 +176,7 @@ public class TextController : MonoBehaviour {
     void state_rocket3()
     {
         gameText.text = "Rocket: Not so fast! You’ll want to make sure to let an adult know that you don’t have enough fare to cover the trip.\n\n" +
-                        "" + PlayerPrefs.GetString("Name") + ": Ask an adult for help to add more money to my ORCA card. (Press H to ask for help)";
+                        "" + PlayerPrefs.GetString("Name") + ": Ask an adult for help to add more money to my ORCA card.\n (Press H to ask for help)";
         if (Input.GetKeyDown(KeyCode.H))
         {
             myState = States.rocket5;
@@ -209,8 +209,8 @@ public class TextController : MonoBehaviour {
     void state_street()
     {
         gameText.text = "Rocket: Okay " + PlayerPrefs.GetString("Name") + ", do you want to get on the bus now to meet your friends, or go to the comic book store first?\n\n" +
-                        "" + PlayerPrefs.GetString("Name") + ": I love to go to the comic book store!(Press C to go to the Comic book store)\n\n" +
-                        "" + PlayerPrefs.GetString("Name") + ": No thank you, not today.(Press N for No)";
+                        "" + PlayerPrefs.GetString("Name") + ": I love to go to the comic book store!\n (Press C to go to the Comic book store)\n\n" +
+                        "" + PlayerPrefs.GetString("Name") + ": No thank you, not today.\n (Press N for No)";
         if (Input.GetKeyDown(KeyCode.C))
         {
             myState = States.comic;
@@ -234,9 +234,9 @@ public class TextController : MonoBehaviour {
     void state_street2()
     {
         gameText.text = "No worries. Maybe you would like to go to the candy store instead?\n\n" +
-                        "" + PlayerPrefs.GetString("Name") + ": Yes please! (Press Y for Yes)\n" +
+                        "" + PlayerPrefs.GetString("Name") + ": Yes please!\n (Press Y for Yes)\n\n" +
                         "" + PlayerPrefs.GetString("Name") + ":  Not today, I don’t have enough allowance.\n" +
-                        "I’m ready to go meet my friends! (Press N for No)";
+                        "I’m ready to go meet my friends!\n (Press N for No)";
         if (Input.GetKeyDown(KeyCode.Y))
         {
             myState = States.rocket6;

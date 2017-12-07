@@ -49,10 +49,10 @@ public class StreetTextController : MonoBehaviour {
     void state_streetCrossing()
     {
         gameText.text = "Rocket: Let’s be careful when we’re crossing the street! We don’t want to get injured. What’s the best way to cross the street?\n\n" +
-                        "" + PlayerPrefs.GetString("Name") + ": Run as soon as there is a break in the cars! (Press the R key)\n\n" +
-                        "" + PlayerPrefs.GetString("Name") + ": Push the button even though someone else pushed it a moment before, and wander through the crowd, close to the cars. (Press the P key)\n\n" +
+                        "" + PlayerPrefs.GetString("Name") + ": Run as soon as there is a break in the cars!\n (Press the R key)\n\n" +
+                        "" + PlayerPrefs.GetString("Name") + ": Push the button even though someone else pushed it a moment before, and wander through the crowd, close to the cars.\n (Press the P key)\n\n" +
                         "" + PlayerPrefs.GetString("Name") + ": Notice if someone has pressed the button or if the machine is saying, “wait,” which means someone else has pushed the button already." +
-                        "Then cross the street slowly, being respectful of the people around you. (Press the C key)";
+                        "Then cross the street slowly, being respectful of the people around you.\n (Press the C key)";
         if (Input.GetKeyDown(KeyCode.R))
         {
             myState = State.tryAgain;
@@ -78,9 +78,9 @@ public class StreetTextController : MonoBehaviour {
     void state_streetCrossing2()
     {
         gameText.text = "Rocket: Let’s be careful when we’re crossing the street! We don’t want to get injured. What’s the best way to cross the street?\n\n" +
-                        "" + PlayerPrefs.GetString("Name") + ": Push the button even though someone else pushed it a moment before, and wander through the crowd, close to the cars. (Press the P key)\n\n" +
+                        "" + PlayerPrefs.GetString("Name") + ": Push the button even though someone else pushed it a moment before, and wander through the crowd, close to the cars.\n (Press the P key)\n\n" +
                         "" + PlayerPrefs.GetString("Name") + ": Notice if someone has pressed the button or if the machine is saying, “wait,” which means someone else has pushed the button already." +
-                        "Then cross the street slowly, being respectful of the people around you. (Press the C key)";
+                        "Then cross the street slowly, being respectful of the people around you.\n (Press the C key)";
         if (Input.GetKeyDown(KeyCode.P))
         {
             myState = State.tryAgain2;
@@ -105,7 +105,7 @@ public class StreetTextController : MonoBehaviour {
     {
         gameText.text = "Rocket: Let’s be careful when we’re crossing the street! We don’t want to get injured. What’s the best way to cross the street?\n\n" +
                         "" + PlayerPrefs.GetString("Name") + ": Notice if someone has pressed the button or if the machine is saying, “wait,” which means someone else has pushed the button already." +
-                        "Then cross the street slowly, being respectful of the people around you. (Press the C key)";
+                        "Then cross the street slowly, being respectful of the people around you.\n (Press the C key)";
         if (Input.GetKeyDown(KeyCode.C))
         {
             myState = State.accrossStreet;

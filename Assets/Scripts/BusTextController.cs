@@ -44,9 +44,9 @@ public class BusTextController : MonoBehaviour {
                         "It doesn’t look like there’s a line. Do you know what to do when the bus gets here? Oh, look! The 49!" +
                         "It’s waiting at the red light and will be here soon!\n\n" +
                         "" + PlayerPrefs.GetString("Name") + ": As the bus arrives, I should Push forward through the crowd of people so I can be the first one on the bus," +
-                        "even if people are trying to get off. (Press the P key)\n\n" +
+                        "even if people are trying to get off.\n (Press the P key)\n\n" +
                         "" + PlayerPrefs.GetString("Name") + ": As the bus arrives, I should Wait where I am standing and move safely to the bus," +
-                        "only when everyone on the bus has gotten off first. (Press the W key)";
+                        "only when everyone on the bus has gotten off first.\n (Press the W key)";
         if (Input.GetKeyDown(KeyCode.P))
         {
             myState = State.tryAgain;
